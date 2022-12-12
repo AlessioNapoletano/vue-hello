@@ -13,7 +13,29 @@
     <!--VUE-->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-    <h1 id="app">{{ message }}</h1>
+    <header id="app">
+        <div class="container">
+            <div id="header" class="mb-2">
+                <h1 :class="myTitleClass">
+                    {{message}}
+                </h1>
+            </div>
+            
+            <div id="body" class="mb-2">
+                <p :class="myPClass">
+                    Clicca sul logo boolean per invocare la funzione saluta()
+                </p>
+                <img :src="mySrc" :alt="myAlt" @click="saluta">
+            </div>
+            
+
+            <div class="mb-3">
+                <label for="change" :class="myLabelClass">Da qui è possibile cambiare il titolo della pagina</label>
+                <input id="change" v-model="message">
+            </div>
+            
+        </div>
+    </header>
        
     
 
